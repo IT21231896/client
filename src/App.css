@@ -1,0 +1,14 @@
+.cms-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex-grow: 1;
+  /*padding: 40px;*/
+  background-color: #ecf0f1;
+}
+/*my*/
+
+
