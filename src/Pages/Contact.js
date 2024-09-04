@@ -29,7 +29,7 @@ function Contact() {
                         placeholder="Type your message here..."
                         value={messageText}
                         onChange={(e) => setMessageText(e.target.value)}
-                    />
+                    /><br/>
                     <button onClick={handleSendMessage}>Send</button>
                 </div>
 

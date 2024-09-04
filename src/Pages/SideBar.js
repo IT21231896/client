@@ -30,6 +30,9 @@ function Sidebar() {
                         <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/emailservice" activeClassName="active-link">Email</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/change-password" activeClassName="active-link">Change Password</NavLink>
                     </li>
                 </ul>
