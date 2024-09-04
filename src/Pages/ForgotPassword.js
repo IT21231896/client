@@ -45,6 +45,10 @@ function ForgotPassword() {
         />
         <button type="submit">Reset Password</button>
       </form>
+      <div className="center-links">
+        <a className="forgot-password" href="/signup">Register</a>
+        <a className="back-to-home" href="/">Back to Login</a>
+      </div>
     </div>
   );
 }

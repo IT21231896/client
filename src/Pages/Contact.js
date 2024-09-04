@@ -24,7 +24,7 @@ function Contact() {
             <Sidebar />
             <div className='contact-content'>
                 <div className="send-message">
-                    <h2>Send Message</h2>
+                    <h2>Send Message to Admin</h2>
                     <textarea
                         placeholder="Type your message here..."
                         value={messageText}
