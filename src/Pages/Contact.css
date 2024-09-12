@@ -15,7 +15,7 @@
   .header-section {
     position: fixed;
     width: 100vw; /* Adjust the width to take up the entire screen width */
-    height: 93px;
+    height: 90px;
     background-color: #9DDEFA;
     display: flex;
     align-items: center;
