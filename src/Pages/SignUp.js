@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Common.css";
+
+import logo from '../assets/logo.png';
+
 function SignUp() {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -18,9 +21,9 @@ function SignUp() {
 
   return (
     <div className="sign-up">
-      <h2 style={{textAlign: 'center', color: '#008CBA', fontSize: '30px', fontWeight: 'bold'}}>
-        CMS
-      </h2>
+      <div className="logo-section1">
+        <img src={logo} alt="Logo" className="logo1" />
+      </div>
       <h3 className="center-texts">Client Account Creation</h3>
       <form onSubmit={handleSubmit}>
         <select

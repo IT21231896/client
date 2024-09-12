@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Common.css";
+
+import logo from '../assets/logo.png';
+
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [cellPhoneNumber, setCellPhoneNumber] = useState("");
@@ -13,6 +16,9 @@ function ForgotPassword() {
 
   return (
     <div className="change-password">
+      <div className="logo-section1">
+        <img src={logo} alt="Logo" className="logo1" />
+      </div>
       <h2 className="center-texts">Client Forgot Password</h2>
       <form onSubmit={handleSubmit}>
         <input

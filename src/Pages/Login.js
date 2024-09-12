@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Common.css";
+
+import logo from '../assets/logo.png';
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,9 +14,9 @@ function Login() {
 
   return (
     <div className="login">
-      <h2 style={{textAlign: 'center', color: '#008CBA', fontSize: '30px', fontWeight: 'bold'}}>
-        CMS
-      </h2>
+      <div className="logo-section1">
+        <img src={logo} alt="Logo" className="logo1" />
+      </div>
       <h3 className="center-texts">Clients Sign in</h3>
       <form onSubmit={handleSubmit}>
         <input

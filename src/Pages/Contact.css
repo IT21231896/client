@@ -4,11 +4,36 @@
 }
 
 .contact-content {
+    margin-top: 90px;
     flex-grow: 1; /* Allows the content area to take up remaining space */
     padding: 40px;
     padding-left: 300px; /* Same as Sidebar width to avoid overlap */
     background-color: #f5f7fa;
 }
+
+  /* Header Section */
+  .header-section {
+    position: fixed;
+    width: 100vw; /* Adjust the width to take up the entire screen width */
+    height: 93px;
+    background-color: #9DDEFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .header-section h1 {
+    padding-left: 250px;
+  }
+  
+  .header-section h1 {
+    /*color: white;*/
+    font-family: 'Inter', sans-serif;
+    font-size: 35px;
+    margin: 0;
+  
+  }
 
 .send-message, .received-messages {
     background-color: white;
@@ -74,3 +99,12 @@ button:hover {
 .received-messages li button:hover {
     background-color: #c0392b;
 }
+
+
+  /* Footer Section (Bottom light blue box) */
+  .footer-section {
+    width: auto;
+    height: 93px;
+    background-color: #9DDEFA;
+  }
+  

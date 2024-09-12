@@ -1,13 +1,12 @@
 .dashboard {
     padding: 40px;
     background-color: #f5f7fa;
-    height: 100vh;
     padding-left: 300px;
     display:block;
 }
 
 .dashboard-content {
-    padding-top: 10px;
+    padding-top: 90px;
     display: flex;
     flex-direction: column;
     gap: 20px;
