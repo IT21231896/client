@@ -1,23 +1,50 @@
 import React, { useState } from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 import "./Common.css";
 
 import logo from '../assets/logo.png';
 
 function SignUp() {
-  const [email, setEmail] = useState("");
-  const [website, setWebsite] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [accountType, setAccountType] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [address, setAddress] = useState("");
-  const [workPhoneNumber, setWorkPhoneNumber] = useState("");
-  const [cellPhoneNumber, setCellPhoneNumber] = useState("");
 
-  const handleSubmit = (e) => {
+  const [values, setValues] = useState({
+    email: '',
+    contact_name: '',
+    website_address: '',
+    password: '',
+    confirmPassword: '',
+    account_type: '',
+    company_name: '',
+    address: '',
+    work_phone_number: '',
+    cell_phone_number: ''
+  });
+
+  const navigate = useNavigate();
+
+  // State for handling success or error messages for password match
+  const [message, setMessage] = useState('');
+
+  function handleSubmit(e) {
     e.preventDefault();
-    // Handle account creation logic here
-  };
+
+    // Check if passwords match
+    if (values.password !== values.confirmPassword) {
+      setMessage("Passwords do not match.");
+      return;
+    }
+
+    // Create a copy of values without the confirmPassword field
+    const { confirmPassword, ...dataToSubmit } = values;
+
+    axios.post('/add_user', dataToSubmit)
+      .then((res) => {
+        navigate('/dashboard');
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="sign-up">
@@ -28,8 +55,7 @@ function SignUp() {
       <form onSubmit={handleSubmit}>
         <select
           style={{ height: '40px', marginBottom: '15px' }}
-          value={accountType}
-          onChange={(e) => setAccountType(e.target.value)}
+          onChange={(e) => setValues({ ...values, account_type: e.target.value })}
           required
         >
           <option value="">Account Type</option>
@@ -39,59 +65,58 @@ function SignUp() {
 
         <input
           type="text"
+          placeholder="User Name"
+          onChange={(e) => setValues({ ...values, contact_name: e.target.value })}
+          required
+        />
+
+        <input
+          type="text"
           placeholder="Company Name"
-          value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
+          onChange={(e) => setValues({ ...values, company_name: e.target.value })}
           required
         />
         <input
           type="text"
           placeholder="Address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={(e) => setValues({ ...values, address: e.target.value })}
           required
         />
         <input
           type="text"
           placeholder="Work Phone Number"
-          value={workPhoneNumber}
-          onChange={(e) => setWorkPhoneNumber(e.target.value)}
+          onChange={(e) => setValues({ ...values, work_phone_number: e.target.value })}
           required
         />
         <input
           type="text"
           placeholder="Cell Phone Number"
-          value={cellPhoneNumber}
-          onChange={(e) => setCellPhoneNumber(e.target.value)}
+          onChange={(e) => setValues({ ...values, cell_phone_number: e.target.value })}
           required
         />
         <input
           type="text"
           placeholder="Web Site Address"
-          value={website}
-          onChange={(e) => setWebsite(e.target.value)}
+          onChange={(e) => setValues({ ...values, website_address: e.target.value })}
           required
         />
         <input
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setValues({ ...values, email: e.target.value })}
           required
         />
 
         <input
           type="password"
           placeholder="New Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setValues({ ...values, password: e.target.value })}
           required
         />
         <input
           type="password"
           placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
+          onChange={(e) => setValues({ ...values, confirmPassword: e.target.value })}
           required
         />
 
@@ -106,4 +131,3 @@ function SignUp() {
 }
 
 export default SignUp;
-

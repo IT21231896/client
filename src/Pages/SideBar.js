@@ -43,9 +43,7 @@ const SideBar = () => {
           <NavLink to="/contact" activeClassName="active-link">Contact</NavLink>
         </li>
       </ul>
-        <div className="sidebar-footer">
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
-        </div>
+ 
     </div>
   );
 };
